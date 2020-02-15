@@ -61,4 +61,18 @@ class Customer(db.Model):
     floorHeating = db.Column(db.String(255))
     otherSigLoads = db.Column(db.String(255))
 
-    
+
+
+class Design(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    customer_id = db.Column(db.Integer)
+    name = db.Column(db.String(255))
+
+    inverterLocationAndMounting = db.Column(db.String(255))
+    roofType = db.Column(db.String(255))
+    panelOreintation = db.Column(db.String(255))
+    roofHeight = db.Column(db.String(255))
+    shading = db.Column(db.String(255))
+    monitoring = db.Column(db.String(255))
+    installationDifficulty = db.Column(db.String(255))
+    notes = db.Column(db.String(255))
