@@ -1,3 +1,13 @@
+from app import app, db
+from flask import request, render_template
+
+@app.route('/', methods=["GET", 'POST'])
+def baseRoute():
+    if request.method == "POST":
+        # CALCULATION ALGORITHM
+    else:
+        return render_template('index.html')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
