@@ -3,10 +3,12 @@ from flask import request, render_template
 
 @app.route('/', methods=["GET", 'POST'])
 def baseRoute():
+    data = None
     if request.method == "POST":
+        json = request.get_json()
         # CALCULATION ALGORITHM
     else:
-        return render_template('index.html')
+        return render_template('index.html', data=data)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
