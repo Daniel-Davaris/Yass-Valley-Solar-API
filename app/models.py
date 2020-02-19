@@ -76,3 +76,24 @@ class Design(db.Model):
     monitoring = db.Column(db.String(255))
     installationDifficulty = db.Column(db.String(255))
     notes = db.Column(db.String(255))
+
+class Design_Item(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    design_id = db.Column(db.Integer)
+    item_id = db.Column(db.Integer)
+    quantity = db.Column(db.Integer)
+
+class Item(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255))
+    category = db.Column(db.Integer)
+    # ADD MORE ROWS
+
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255))
+
+class Category_Item(db.Model):
+    category_id = db.Column(db.Integer, primary_key=True)
+    compoent_id = db.Column(db.Integer, primary_key=True)
+    
