@@ -93,7 +93,4 @@ class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
 
-class Category_Item(db.Model):
-    category_id = db.Column(db.Integer, primary_key=True)
-    compoent_id = db.Column(db.Integer, primary_key=True)
     
