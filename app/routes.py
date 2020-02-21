@@ -4,12 +4,12 @@ from flask_login import current_user, logout_user
 
 @app.route('/', methods=["GET", 'POST'])
 def index():
-    data = None
-    if request.method == "POST":
-        json = request.get_json()
-        # CALCULATION ALGORITHM
-    else:
-        return render_template('index.html', data=data)
+    # data = None
+    # if request.method == "POST":
+    #     json = request.get_json()
+    #     # CALCULATION ALGORITHM   
+    # else:
+    return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

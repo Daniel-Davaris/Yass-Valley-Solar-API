@@ -1,6 +1,7 @@
 from app import app, db
 from flask import request, jsonify
-from models import Item, Category
+
+# from models import Item, Category  :::: i disable this because it was getting a ' couldnt find models' error
 from collections import defaultdict
 
 
@@ -12,3 +13,6 @@ def allTools():
         item_cat = categories[item.category]
         val[item_cat].append("TEMP") # GET LIST OF ARGS
     return jsonify(val)
+
+
+    
