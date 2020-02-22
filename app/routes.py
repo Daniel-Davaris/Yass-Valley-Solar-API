@@ -1,6 +1,6 @@
 from app import app, db
 from flask import request, render_template, flash, redirect, url_for
-from flask_login import current_user, logout_user
+from flask_login import current_user, logout_user, login_user
 
 @app.route('/', methods=["GET", 'POST'])
 def dashboard():
