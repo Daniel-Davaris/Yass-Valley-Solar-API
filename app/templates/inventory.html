@@ -2,13 +2,113 @@
 {% import "bootstrap/wtf.html" as wtf %} 
 {% block app_content %}
 
+<div class="container">
+    <h1> Add Item</h1>                                      
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">category
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Panels</a></li>
+        <li><a href="#">Inverters</a></li>
+        <li><a href="#">Inverter Accessories</a></li>
+        <li><a href="#">Storage/Battery</a></li>
+        <li><a href="#">Moutning</a></li>
+        <li><a href="#">Electrical</a></li>
+        <li><a href="#">Cabinets</a></li>
+        <li><a href="#">Pumping</a></li>
+        <li><a href="#">Labour Solar</a></li>
+        <li><a href="#">Labour Battery</a></li>
+        <li><a href="#">Generators</a></li>
+        <li><a href="#">Quote Inclusions</a></li>
+      </ul>
+    </div>
+  </div>
 
+  
+    <form id="example" name="example">
+            <select id="sensor" onchange="updateText('sensor')">
+                <option value="Panels">Panels</option>
+                <option value="Inverters">Inverters</option>
+                <option value="Inverter Accessories">Inverter Accessories</option>
+                <option value="Storage/Battery">Storage/Battery</option>
+                <option value="Moutning">Moutning</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Cabinets">Cabinets</option>
+                <option value="Pumping">Pumping</option>
+                <option value="Labour Solar">Labour Solar</option>
+                <option value="Labour Battery">Labour Battery</option>
+                <option value="Generators">Generators</option>
+                <option value="Quote Inclusions">Quote Inclusions</option>
+            </select>
+    
+        <!-- <select id="voltage" onchange="updateText('voltage')">
+            <option value="120V">120V</option>
+            <option value="240V">240V</option>
+        </select>
 
+        <select id="panel" onchange="updateText('panel')">
+            <option value="120V2">120V2</option>
+            <option value="240V2">240V2</option>
+        </select>
+         -->
+        <br />
+         <ul id="inm"class="inm">
+            
+         </ul>
+        <!-- for i in range($selected list ) -->
+        <input type="text" value="" id="sensorText" />   
+      
+    </form>
+    
+    <script type="text/javascript">
 
+   
+    // theres
 
-<h1> Add Product</h1>
+    function updateText(type) { 
+        
+        var e = document.getElementById("sensor");
+        var val = e.options[e.selectedIndex].value;
+        var text = e.options[e.selectedIndex].text;
+        console.log(val);
 
+        var id = type+'Text';
+        document.getElementById(id).value = document.getElementById(type).value;
+      
+        
+        if ( text == "Panels" ) {
+           first();
+           
+        }
+        // } else {
+        //     second()
+        // }
+            // document.body.innerHTML = "<h1>Today's date is " + d + "</h1>"
 
+       
+    }
 
+    // function my_try() {
+    //     var t = "Panel"
+    //     if ( t == "Panel" ) {
+    //        first();
+    //     }
+    // }
+
+  
+    function first() {
+        console.log("worked")
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode("Water");
+        node.appendChild(textnode);
+        document.getElementById("inm").appendChild(node);
+        // document.getElementById("myList").appendChild(node);
+    }
+ 
+  
+
+    </script>
+    
+  
 
 {% endblock %}
