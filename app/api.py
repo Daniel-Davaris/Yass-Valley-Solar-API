@@ -15,13 +15,24 @@ def allTools():
     return jsonify(val)
 
 
-@app.route("/api/Customer/new", methods=["POST"])
+@app.route("/api/customer/new", methods=["POST"])
 def newCustomer():
-    data = request.get_json()
-    c = Customer(**data)
+    try:
+        data = request.get_json()
+        c = Customer(**data)
+        db.session.add(c)
+        db.session.commit()
+        return "Success", 201
+    except:
+        return "Error", 500
 
-@app.route("/api/quotes/new", methods=["POST"])
+@app.route("/api/items/new", methods=["POST"])
 def newItem():
-    data = request.get_json()
-    i = Item(**data)
-    
+    try:
+        data = request.get_json()
+        i = Item(**data)
+        db.session.add(i)
+        db.session.commit()
+        return "Success", 201
+    except:
+        return "Error", 500

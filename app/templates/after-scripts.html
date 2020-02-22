@@ -1,0 +1,19 @@
+<script>
+$.ajax({
+    async: false,
+    method: 'POST',
+    url: '/Make_playlist',
+    data: JSON.stringify({
+        "title":title,
+        "desc":desc
+    }),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    succsess: (response) => {
+        console.log(response);
+    },
+    error: function(error) {
+        console.log(error);
+    }
+})
+</script>
