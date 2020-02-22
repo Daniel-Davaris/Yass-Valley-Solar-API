@@ -1,7 +1,7 @@
 from app import app, db
 from flask import request, render_template, flash, redirect, url_for
 from flask_login import current_user, logout_user
-from forms import LoginForm
+from app.forms import LoginForm
 
 @app.route('/', methods=["GET", 'POST'])
 def dashboard():
