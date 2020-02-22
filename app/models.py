@@ -14,12 +14,11 @@ def load_user(id):
 class User(UserMixin, db.Model):
 	"""User table - renamed to Person to avoid sql injection attacks."""
 
-	__tablename__ = 'person'
-
 	id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(64), index=True, unique=True)
 	email = db.Column(db.String(120), index=True, unique=True)
 	password_hash = db.Column(db.String(128))
+
 
 	def __repr__(self):
 		"""Tells the class how to reperesnt itself."""
