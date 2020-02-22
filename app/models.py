@@ -116,10 +116,65 @@ class Design_Item(db.Model):
     quantity = db.Column(db.Integer)
 
 class Item(db.Model):
+    # shared
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     category = db.Column(db.Integer)
-    cost = db.Column(db.Integer)
+    # panels
+
+    panelCost = db.Column(db.Integer)
+    panelSupplier = db.Column(db.String(255))
+    panelWprice = db.Column(db.Integer)
+    panelWattage = db.Column(db.Integer)
+    panelBrand = db.Column(db.String(255))
+    panelModel = db.Column(db.String(255))
+    panelVoc = db.Column(db.Integer)
+    panelVmp = db.Column(db.Integer)
+    panelIsc = db.Column(db.Integer)
+    panelImp = db.Column(db.Integer)
+    # inverters
+    inverterUnitCost = db.Column(db.Integer)
+    inverterSupplier = db.Column(db.String(255))
+    inverterBrand = db.Column(db.String(255))
+    inverterModel = db.Column(db.String(255))
+    inverterSeries = db.Column(db.String(255))
+    inverterMinVoltage = db.Column(db.Integer)
+    inverterMaxVoltage = db.Column(db.Integer)
+    inverterMaxPinkW = db.Column(db.Integer)
+    inverterMaxPoutkW = db.Column(db.Integer)
+    # inverters accessories
+    inverterAccessorieUnitCost = db.Column(db.Integer)
+    inverterAccessorieSupplier = db.Column(db.String(255))
+    # storage 
+    storageUnitCost = db.Column(db.Integer)
+    storageKWH = db.Column(db.Integer)
+    storageC60AH = db.Column(db.Integer)
+    storageC72AH = db.Column(db.Integer)
+    storageBrand = db.Column(db.String(255))
+    # mounting
+    mountingPrice = db.Column(db.Integer)
+
+    # electrical / ballance of systems 
+    electricalPrice = db.Column(db.Integer)
+    electricalSupplier = db.Column(db.String(255))
+
+    # cabinet
+    cabinetUnitCost = db.Column(db.Integer)
+    # pumping
+    pumpingUnitCost = db.Column(db.Integer)
+    # labour Solar
+    labourSolarUnitCost = db.Column(db.Integer)
+    # labour Batteries
+    labourBatteriesUnitCost = db.Column(db.Integer)
+    # generators 
+    generatorUnitCost = db.Column(db.Integer)
+    # quote inclusions 
+    inclusionsCost = db.Column(db.Integer)
+
+
+
+
+
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)

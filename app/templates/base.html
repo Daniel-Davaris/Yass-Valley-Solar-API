@@ -1,7 +1,12 @@
 {% block content %}
 
     {% include 'head.html' %} 
-    {% include 'navbar.html' %} 
+
+    {% if current_user.is_anonymous %}
+        {% include 'navbar-login.html' %} 
+    {% else %}
+        {% include 'navbar.html' %} 
+    {% endif %}
 
     {% with messages = get_flashed_messages() %} 
         {% if messages %} 

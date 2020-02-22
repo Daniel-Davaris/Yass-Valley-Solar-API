@@ -34,7 +34,17 @@ def login():
     return render_template('login.html', title='Sign In', form=form)
 
 
+@app.route('/inventory', methods=["GET", 'POST'])
+def inventory():
+    data = None
+    if request.method == "POST":
+        json = request.get_json()
+        # CALCULATION ALGORITHM
+    else:
+        return render_template('inventory.html', data=data)
+
+
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('login'))
