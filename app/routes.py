@@ -3,13 +3,13 @@ from flask import request, render_template, flash, redirect, url_for
 from flask_login import current_user, logout_user
 
 @app.route('/', methods=["GET", 'POST'])
-def home():
+def dashboard():
     data = None
     if request.method == "POST":
         json = request.get_json()
         # CALCULATION ALGORITHM
     else:
-        return render_template('home.html', data=data)
+        return render_template('dashboard.html', data=data)
 
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():
