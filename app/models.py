@@ -32,15 +32,6 @@ class User(UserMixin, db.Model):
 		"""Checks a password against the hash."""
 		return check_password_hash(self.password_hash, password)
 
-	def avatar(self, size):
-		"""Returns avatar of user."""
-		digest = hashlib.md5(self.email.lower().encode('utf-8')).hexdigest()
-		self.profile_pic = \
-			'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(
-				digest, size
-			)
-		return self.profile_pic
-
 
 class Customer(db.Model):
     # Contact Details
