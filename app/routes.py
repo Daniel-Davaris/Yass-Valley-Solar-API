@@ -1,6 +1,7 @@
 from app import app, db
 from flask import request, render_template, flash, redirect, url_for
 from flask_login import current_user, logout_user
+from app.forms import LoginForm
 
 @app.route('/', methods=["GET", 'POST'])
 def dashboard():
@@ -9,7 +10,7 @@ def dashboard():
         json = request.get_json()
         # CALCULATION ALGORITHM
     else:
-        if current_user.is_anonymous():
+        if current_user.is_anonymous:
             return redirect(url_for('login'))
         return render_template('dashboard.html', data=data)
 
